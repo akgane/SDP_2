@@ -1,17 +1,13 @@
-import Task1.Factories.PDFFactory;
-import Task1.Factories.WordFactory;
-import Task2.Application;
-import Task2.Interfaces.ThemeFactory;
-import Task2.Theme.Factories.DarkThemeFactory;
-import Task2.Theme.Factories.LightThemeFactory;
-
+import Task1.Factories.*;
+import Task2.*;
+import Task2.Interfaces.*;
+import Task2.Theme.Factories.*;
 
 public class Main {
     public static void main(String[] args) {
 //        DocumentTest();
         GUITest();
     }
-
 
     /**
      * Factory Method Pattern is best pattern for this scenario.
@@ -38,14 +34,14 @@ public class Main {
     static void GUITest(){
         ThemeFactory lightTheme = new LightThemeFactory();
         Application lightApp = new Application(lightTheme);
-        System.out.println("Light theme");
+        System.out.println("Light theme: ");
         lightApp.displayComponents();
 
-        System.out.println("\n\n\n");
+        System.out.println("\n==============\n");
 
         ThemeFactory darkTheme = new DarkThemeFactory();
         Application darkApp = new Application(darkTheme);
-        System.out.println("Dark theme");
+        System.out.println("Dark theme: ");
         darkApp.displayComponents();
 
         //New "blue theme" can be easily added and used
